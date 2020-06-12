@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>High Low Today</title>
+    <style>
+      .h1_
+      {
+        color:gray;
+        font-size: larger;
+            font-size: 28px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif; 
+      }
+        .th{
+            color:rgb(13, 179, 27);
+            font-size: larger;
+            font-size: 35px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        .td{
+            color:rgb(43, 29, 167);
+            font-size: larger;
+            font-size: 35px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+      table, th, td {
+        padding: 10px;
+        color:gray;
+        font-size: larger;
+            font-size: 28px;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+      }
+      table {
+        border-spacing: 5px;
+      }
+      </style>
+      <script type="text/javascript" src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+      <script type="text/javascript" src="https://momentjs.com/downloads/moment-timezone-with-data.js"></script>
+
+</head>
+<body>
+  <center>
+    <!-- High Low -->
+    <h1 class = 'th'>High Low Today</h1>
+    <h1 class = 'h1_' id="">Predicted For <span id="demo"></span>  </h1> <!-- {{ data['xdate'][0] }} -->
+    
+    <br><br>
+    <table>
+        <tr>
+          <th></th>
+          <th class='th'>Highest</th>
+          <th class='th'>Lowest</th>
+        </tr>
+        <tr>
+          <td class='td'>GBPUSD</td>
+          <td>{{data['GBPUSD'][0]}}</td>
+          <td>{{data['GBPUSD'][1]}}</td>
+        </tr>
+        <tr>
+          <td class='td'>EURUSD</td>
+          <td>{{data['EURUSD'][0]}}</td>
+          <td>{{data['EURUSD'][1]}}</td>
+        </tr>
+        <tr>
+            <td class='td'>USDJPY</td>
+            <td>{{data['USDJPY'][0]}}</td>
+          <td>{{data['USDJPY'][1]}}</td>
+        </tr>
+        <tr>
+            <td class='td'>USDCAD</td>
+            <td>{{data['USDCAD'][0]}}</td>
+          <td>{{data['USDCAD'][1]}}</td>
+        </tr>
+        <tr>
+            <td class='td'>XAUUSD</td>
+            <td>{{data['XAUUSD'][0]}}</td>
+          <td>{{data['XAUUSD'][1]}}</td>
+        </tr>
+      </table>
+    </center>
+
+    <script type="text/javascript">
+            
+        
+        document.getElementById("demo").innerHTML = moment().tz("Asia/Riyadh").format('MMMM Do YYYY, h:mm:ss a');
+
+      </script>
+</body>
+</html>
